@@ -1,0 +1,30 @@
+<div class="container">
+  <form>
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input [(ngModel)]="persona.nombre" type="text" class="form-control" id="nombre" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="apellido" class="form-label">Apellido</label>
+      <input [(ngModel)]="persona.apellido" type="text" class="form-control" id="apellido" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Titulo</label>
+      <input [(ngModel)]="persona.titulo" type="text" class="form-control" id="titulo" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="direccion" class="form-label">Direccion</label>
+      <input [(ngModel)]="persona.direccion" type="email" class="form-control" id="direccion" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input [(ngModel)]="persona.email" type="email" class="form-control" id="email" placeholder="">
+    </div>
+    <div class="mb-3">
+      <label for="descripcion" class="form-label">Descripcion</label>
+      <textarea [(ngModel)]="persona.descripcion" class="form-control" id="descripcion" rows="3"></textarea>
+    </div>
+    <button (click)="guardar()" class="btn btn-success">Guardar</button>
+    <button (click)="cancelar()" class="btn btn-danger">Cancelar</button>
+  </form>
+</div>

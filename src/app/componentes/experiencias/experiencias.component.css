@@ -22,5 +22,9 @@ img{
 .card-title{
     display: flex;
 }
+button{
+    color: black;
+    background-color: green;
+}
 
 
