@@ -23,16 +23,15 @@ export class EditarpersonaComponent implements OnInit {
       data => {
         this.persona=data;
         console.log(data);
-      }
-    )
+      });
   }
 
-  guardar(){
-
+  guardarMe(persona:Persona){
+    this.personaServicio.actualizarPersona(persona).subscribe(
+      data => {
+          console.log(data);
+          this.persona =data;
+          this.router.navigate(["sobremi"]);
+      });
   }
-
-  cancelar(){
-
-  }
-
 }

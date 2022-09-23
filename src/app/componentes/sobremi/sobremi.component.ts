@@ -24,7 +24,6 @@ export class SobremiComponent implements OnInit {
   }
 
   editarPersona(persona:Persona):void{
-
     localStorage.setItem("id", persona.id.toString());
     this.router.navigate(["editarpersona"]);
   }
