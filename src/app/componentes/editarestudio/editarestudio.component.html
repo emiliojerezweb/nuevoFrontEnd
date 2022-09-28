@@ -1,0 +1,25 @@
+<div class="container col-md-6 shadow">
+    <form>
+        <div class="form-group">
+            <label for="titulo" class="form-label">Titulo.</label>
+            <input type="text" class="form-control" [(ngModel)]="estudio.titulo" name="titulo" required>
+        </div>
+        <div class="form-group">
+            <label for="lugar">Establecimiento.</label>
+            <input type="text" class="form-control" [(ngModel)]="estudio.lugar" name="lugar" required>
+        </div>
+        <div class="form-group">
+            <label for="inicio">Año de inicio.</label>
+            <input type="text" class="form-control" [(ngModel)]="estudio.anio_inicio" name="inicio" required>
+        </div>
+        <div class="form-group">
+            <label for="fin">Email</label>
+            <input type="text" class="form-control" [(ngModel)]="estudio.anio_fin" name="fin" required>
+        </div>
+        <div class="form-group">
+          <button (click)="guardar(estudio)" class="btn btn-outline-success shadow p-2  mb-3">
+            <i class="bi bi-save-fill"></i> Guardar</button>
+          <button routerLink="/sobremi" class="btn btn-outline-danger shadow p-2 mb-3 ">
+            <i class="bi bi-x-circle"></i> Volver</button>
+        </div>
+    </form>

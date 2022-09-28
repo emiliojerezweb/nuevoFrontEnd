@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RequiredValidator } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/modelos/Persona';
 import { PersonaService } from 'src/app/servicios/Persona.service';
@@ -11,7 +12,9 @@ import { PersonaService } from 'src/app/servicios/Persona.service';
 export class EditarpersonaComponent implements OnInit {
 
   persona: Persona = new Persona();
-  constructor(private personaServicio: PersonaService, private router: Router) { }
+  
+  constructor(private personaServicio: PersonaService, 
+              private router: Router) { }
 
   ngOnInit(): void {
     this.editar();
@@ -27,11 +30,12 @@ export class EditarpersonaComponent implements OnInit {
   }
 
   guardarMe(persona:Persona){
+
     this.personaServicio.actualizarPersona(persona).subscribe(
-      data => {
-          console.log(data);
-          this.persona =data;
-          this.router.navigate(["sobremi"]);
-      });
+        data => {
+            console.log(data);
+            this.persona =data;
+            this.router.navigate(["sobremi"]);
+       });
   }
 }

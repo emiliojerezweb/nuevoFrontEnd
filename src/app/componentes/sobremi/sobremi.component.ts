@@ -19,7 +19,6 @@ export class SobremiComponent implements OnInit {
     this.personaServicio.verPersona().subscribe(
       dato =>{
        this.personas = dato;
-        console.log(this.personas);
     });
   }
 

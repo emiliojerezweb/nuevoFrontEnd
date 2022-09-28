@@ -1,33 +1,33 @@
 <h2>Modificar Persona</h2>
 <hr>
 <div class="container col-md-6 shadow">
-    <form action="" >
+    <form>
         <div class="form-group">
-            <label for="nombre">Nombre.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.nombre" name="nombre" 
-             >
+            <label for="nombre" class="form-label">Nombre.</label>
+            <input type="text" class="form-control" [(ngModel)]="persona.nombre" name="nombre" required>
         </div>
         <div class="form-group">
             <label for="apellido">Apellido.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.apellido" name="apellido" 
-            required="false">
+            <input type="text" class="form-control" [(ngModel)]="persona.apellido" name="apellido" required>
         </div>
         <div class="form-group">
             <label for="direccion">Direccion.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.direccion" name="direccion">
+            <input type="text" class="form-control" [(ngModel)]="persona.direccion" name="direccion" required>
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" class="form-control" [(ngModel)]="persona.email" name="email">
+            <input type="email" class="form-control" [(ngModel)]="persona.email" name="email" required>
         </div>
         <div class="form-group">
             <label for="descripcion">Descripcion.</label>
-            <textarea  row=3 class="form-control" [(ngModel)]="persona.descripcion" name="descripcion"></textarea>
+            <textarea  row=3 class="form-control" [(ngModel)]="persona.descripcion" name="descripcion" required></textarea>
         </div>
-        <button (click)="guardarMe(persona)" class="btn btn-outline-success shadow p-2  mb-3">
-          <i class="bi bi-save-fill"></i> Guardar</button>
-        <button routerLink="/sobremi" class="btn btn-outline-danger shadow p-2 mb-3 ">
-          <i class="bi bi-x-circle"></i> Cancelar</button>
+        <div class="form-group">
+          <button (click)="guardarMe(persona)" class="btn btn-outline-success shadow p-2  mb-3">
+            <i class="bi bi-save-fill"></i> Guardar</button>
+          <button routerLink="/sobremi" class="btn btn-outline-danger shadow p-2 mb-3 ">
+            <i class="bi bi-x-circle"></i> Volver</button>
+        </div>
     </form>
 
 
