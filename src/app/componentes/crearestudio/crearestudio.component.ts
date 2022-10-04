@@ -5,33 +5,25 @@ import { EstudiosService } from 'src/app/servicios/estudios.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-editarestudio',
-  templateUrl: './editarestudio.component.html',
-  styleUrls: ['./editarestudio.component.css']
+  selector: 'app-crearestudio',
+  templateUrl: './crearestudio.component.html',
+  styleUrls: ['./crearestudio.component.css']
 })
-export class EditarestudioComponent implements OnInit {
+export class CrearestudioComponent implements OnInit {
 
   estudio: Estudios = new Estudios();
   
-
   constructor(private estudioServicio: EstudiosService, private router: Router) { }
 
   ngOnInit(): void {
-    this.editarEstudio();
   }
 
-  editarEstudio(){
-    let id=localStorage.getItem("id");
-    this.estudioServicio.buscarEstudioId(+id).subscribe(
-      dato => {
-        this.estudio = dato;
-      });
-  }
   guardar(estudio:Estudios){
     if(this.validar(estudio)){
       if(estudio.anio_inicio.length == 4){
         if(estudio.anio_fin.length == 4){
-            this.estudioServicio.editarEstudio(estudio).subscribe(
+            this.estudio.imagen = "Logotrabajo.png"
+            this.estudioServicio.crearEstudio(estudio).subscribe(
             data => {
                 this.estudio =data;
                 this.router.navigate(["estudio"]);
@@ -62,14 +54,13 @@ export class EditarestudioComponent implements OnInit {
   }
   
     validar(estudio: Estudios){
-      if(estudio.titulo!=='' && estudio.lugar!=='' && 
-          estudio.anio_inicio!=='' && estudio.anio_fin!==''){
+      if(estudio.titulo!==' ' && estudio.lugar!==' ' && 
+          estudio.anio_inicio!==' ' && estudio.anio_fin!==' '){
             return true;
       }
       else{
           return false;
       }    
     }
-  
 
 }

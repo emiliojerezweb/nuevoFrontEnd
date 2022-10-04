@@ -45,3 +45,7 @@ i{
     padding: 5px;
     color: black;
 }
+
+a:hover{
+    color: blue;
+}

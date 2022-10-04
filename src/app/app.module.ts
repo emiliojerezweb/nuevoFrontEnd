@@ -14,6 +14,7 @@ import { ExperienciasComponent } from './componentes/experiencias/experiencias.c
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { EditarpersonaComponent } from './componentes/editarpersona/editarpersona.component';
 import { EditarestudioComponent } from './componentes/editarestudio/editarestudio.component';
+import { CrearestudioComponent } from './componentes/crearestudio/crearestudio.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { EditarestudioComponent } from './componentes/editarestudio/editarestudi
     ExperienciasComponent,
     HabilidadesComponent,
     EditarpersonaComponent,
-    EditarestudioComponent
+    EditarestudioComponent,
+    CrearestudioComponent
   ],
   imports: [
     BrowserModule,

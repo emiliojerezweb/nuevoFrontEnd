@@ -1,34 +1,63 @@
 <h2>Modificar Persona</h2>
 <hr>
 <div class="container col-md-6 shadow">
-    <form>
-        <div class="form-group">
-            <label for="nombre" class="form-label">Nombre.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.nombre" name="nombre" required>
+  <form>
+    <div class="form-group">
+      <label for="nombre">Nombre.</label>
+      <input type="text" name="nombre" class="form-control" required [(ngModel)]="persona.nombre"
+        #nombrelocal="ngModel">
+      <div *ngIf="nombrelocal.invalid && (nombrelocal.dirty || nombrelocal.touched)" class="validacion">
+        <div *ngIf="nombrelocal.errors">
+          <small>Falta el nombre</small>
         </div>
-        <div class="form-group">
-            <label for="apellido">Apellido.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.apellido" name="apellido" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="apellido">Apellido.</label>
+      <input type="text" class="form-control" [(ngModel)]="persona.apellido" name="apellido" required
+        #apellidolocal="ngModel">
+      <div *ngIf="apellidolocal.invalid && (apellidolocal.dirty || apellidolocal.touched)" class="validacion">
+        <div *ngIf="apellidolocal.errors">
+          <small>Falta el apellido.</small>
         </div>
-        <div class="form-group">
-            <label for="direccion">Direccion.</label>
-            <input type="text" class="form-control" [(ngModel)]="persona.direccion" name="direccion" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="direccion">Direccion.</label>
+      <input type="text" class="form-control" [(ngModel)]="persona.direccion" name="direccion" required #dire="ngModel">
+      <div *ngIf="dire.invalid && (dire.dirty || dire.touched)" class="validacion">
+        <div *ngIf="dire.errors">
+          <small>Falta la direccion.</small>
         </div>
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" [(ngModel)]="persona.email" name="email" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" [(ngModel)]="persona.email" name="email" required #correo="ngModel">
+      <div *ngIf="correo.invalid && (correo.dirty || correo.touched)" class="validacion">
+        <div *ngIf="correo.errors">
+          <small>Falta el email</small>
         </div>
-        <div class="form-group">
-            <label for="descripcion">Descripcion.</label>
-            <textarea  row=3 class="form-control" [(ngModel)]="persona.descripcion" name="descripcion" required></textarea>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="descripcion">Descripcion.</label>
+      <textarea row=3 class="form-control" minlength="6" [(ngModel)]="persona.descripcion" name="descripcion" required
+        #descrip="ngModel"></textarea>
+      <div *ngIf="descrip.invalid && (descrip.dirty || descrip.touched)" class="validacion">
+        <div *ngIf="descrip.value.length < 6">
+          <small>Descripcion debe ser mayor a seis caracteres.</small>
         </div>
-        <div class="form-group">
-          <button (click)="guardarMe(persona)" class="btn btn-outline-success shadow p-2  mb-3">
-            <i class="bi bi-save-fill"></i> Guardar</button>
-          <button routerLink="/sobremi" class="btn btn-outline-danger shadow p-2 mb-3 ">
-            <i class="bi bi-x-circle"></i> Volver</button>
+        <div *ngIf="descrip.errors">
+          <small>Falta la descripcion</small>
         </div>
-    </form>
-
-
-
+      </div>
+    </div>  
+      <div class="form-group">
+        <button (click)="guardarMe(persona)" class="btn btn-outline-success shadow p-2  mb-3">
+          <i class="bi bi-save-fill"></i> Guardar</button>
+        <button routerLink="/sobremi" class="btn btn-outline-danger shadow p-2 mb-3 ">
+          <i class="bi bi-x-circle"></i> Volver</button>
+      </div>
+  </form>
+</div>

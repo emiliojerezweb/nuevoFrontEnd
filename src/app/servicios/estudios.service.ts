@@ -29,7 +29,7 @@ export class EstudiosService {
     return this.httpClient.put<Estudios>(this.Url + `editar`, estudio);
   }
 
-  public borrarEstudioId(id: number) {
-      this.httpClient.delete<Estudios>(this.Url + `borrar/${id}`);
+  public borrarEstudioId(id: number): Observable<any> {
+     return this.httpClient.delete<any>(this.Url + `borrar/${id}`);
   }
 }

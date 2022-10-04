@@ -16,3 +16,14 @@ h2{
 label{
     font-size: 20px;
 }
+
+input:hover{
+    background-color: rgb(249, 255, 244);
+}
+textarea:hover{
+    background-color: rgb(249, 255, 244);
+}
+
+small{
+    color: red;
+}

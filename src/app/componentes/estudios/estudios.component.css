@@ -11,7 +11,7 @@ a{
     width: 90px;
     height: 45px;
     text-align: end;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .retorno{
@@ -35,4 +35,15 @@ h5{
 }
 .card-text1{
     font-style: italic;
+}
+small{
+    color: red;
+    font-weight: bold;
+}
+
+button{
+    margin: 5px;
+}
+.btn-outline-success{
+    margin: 5px
 }
