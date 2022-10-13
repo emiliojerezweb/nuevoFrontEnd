@@ -4,10 +4,10 @@
   <form>
     <div class="form-group">
       <label for="titulo">Titulo.</label>
-      <input type="text" name="titulo" class="form-control" required [(ngModel)]="estudio.titulo"
-        #nombretitulo="ngModel">
-      <div *ngIf="nombretitulo.invalid && (nombretitulo.dirty || nombretitulo.touched)" class="validacion">
-        <div *ngIf="nombretitulo.errors">
+      <input type="text" name="titulo" id="titulo" class="form-control" required [(ngModel)]="estudio.titulo"
+        #titulo="ngModel">
+      <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" class="validacion">
+        <div *ngIf="titulo.errors?.['required']">
           <small>Falta el titulo</small>
         </div>
       </div>
@@ -17,7 +17,7 @@
       <input type="text" class="form-control" [(ngModel)]="estudio.lugar" name="lugar" required
         #local="ngModel">
       <div *ngIf="local.invalid && (local.dirty || local.touched)" class="validacion">
-        <div *ngIf="local.errors">
+        <div *ngIf="local.errors?.['required']">
           <small>Falta el establecimiento.</small>
         </div>
       </div>
@@ -43,7 +43,7 @@
             <div *ngIf="final.value.length < 4">
               <small>Formato año (YYYY)</small>
             </div>
-          <div *ngIf="final.errors">
+          <div *ngIf="final.errors?.['required']">
             <small>Falta el año final</small>
           </div>
         </div>

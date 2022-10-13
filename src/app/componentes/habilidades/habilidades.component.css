@@ -2,7 +2,6 @@
     border: 2px rgb(92, 91, 91);
     padding: 20px;
     margin-top: 70px;
-    box-shadow: 0px 10px 10px  rgb(68, 67, 67);
     border-radius: 2%;
 }
 
@@ -18,7 +17,30 @@ img{
     justify-content: space-between;
     align-items: baseline;
 }
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+    padding: 15px;
+    font-size: 25px;
+    font-style: bold;
+}
+
+.cuadro{
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .progress{
-    margin: 10px;
+    margin: 20px;
+    background-color: none;
+}
+
+li{
+    font-size: 25px;
+    text-align: center;
 }
 

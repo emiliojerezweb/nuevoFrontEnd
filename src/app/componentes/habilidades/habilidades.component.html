@@ -1,28 +1,22 @@
 <div class="container">
-    <div class="retorno">
-        <a href="#" class="btn btn-primary">Button</a>
-        <p class="shadow p-2 mb-4 bg-body rounded"><a href="portfolio"><img src="../../../assets/logo_small.png" class="img-fluid" alt="logo"></a></p>
-    </div>
-  <label>HTML</label>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 55%;" aria-valuenow="25"
-      aria-valuemin="0" aria-valuemax="100">55%</div>
+  <div>
+      <h1>Skills.</h1>
   </div>
-  <label>HTML</label>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 35%;" aria-valuenow="25"
-      aria-valuemin="0" aria-valuemax="100">35%</div>
+  <div class="retorno">
+    <a href="crearexperiencia" class="btn btn-outline-primary shadow p-2 mb-4"><i class="bi bi-card-text"> Agregar experiencia</i></a>
+    <p class="shadow p-2 mb-4 bg-body rounded"><a href="portfolio"><img src="../../../assets/logo_small.png" class="img-fluid" alt="logo"></a></p>
   </div>
-  <label>HTML</label>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 40%;" aria-valuenow="25"
-      aria-valuemin="0" aria-valuemax="100">40%</div>
+  <div class="cuadro ">
+      <div class="habilidad col-md-4" *ngFor="let habilidad of habilidades"> 
+        <div class="card shadow p-2 mb-4" style="width: 18rem;">
+          <div class="card-header">
+            <mat-progress-spinner value="{{habilidad.porcentaje}}" class="progress" diameter="220"></mat-progress-spinner>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{habilidad.habilidad}}</li>
+            <li class="list-group-item">{{habilidad.porcentaje}} %</li>
+          </ul>
+        </div>
+      </div>
   </div>
-  <label>HTML</label>
-  <div class="progress">
-    <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: 35%;" aria-valuenow="25"
-      aria-valuemin="0" aria-valuemax="100">35%</div>
-  </div>
-  <a href="#" class="btn btn-primary">Button</a>
-  <a href="#" class="btn btn-primary">Button</a>
-</div>
+ </div>

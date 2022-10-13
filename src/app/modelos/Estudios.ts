@@ -5,4 +5,5 @@ export class Estudios {
     anio_inicio: string;
     anio_fin: string;
     imagen: string;
+
 }

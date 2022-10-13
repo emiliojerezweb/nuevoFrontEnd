@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule} from '@angular/forms';
 
+
+
 import { PersonaService } from './servicios/Persona.service';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -15,6 +17,10 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { EditarpersonaComponent } from './componentes/editarpersona/editarpersona.component';
 import { EditarestudioComponent } from './componentes/editarestudio/editarestudio.component';
 import { CrearestudioComponent } from './componentes/crearestudio/crearestudio.component';
+import { EditarexperienciaComponent } from './componentes/editarexperiencia/editarexperiencia.component';
+import { CrearexperienciaComponent } from './componentes/crearexperiencia/crearexperiencia.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -26,14 +32,21 @@ import { CrearestudioComponent } from './componentes/crearestudio/crearestudio.c
     HabilidadesComponent,
     EditarpersonaComponent,
     EditarestudioComponent,
-    CrearestudioComponent
+    CrearestudioComponent,
+    EditarexperienciaComponent,
+    CrearexperienciaComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatProgressSpinnerModule
+
   ],
+
   providers: [PersonaService],
   bootstrap: [AppComponent]
 })

@@ -19,6 +19,7 @@ export class CrearestudioComponent implements OnInit {
   }
 
   guardar(estudio:Estudios){
+    
     if(this.validar(estudio)){
       if(estudio.anio_inicio.length == 4){
         if(estudio.anio_fin.length == 4){
@@ -52,15 +53,16 @@ export class CrearestudioComponent implements OnInit {
            text: 'Por favor verificar.',
         })
   }
-  
-    validar(estudio: Estudios){
-      if(estudio.titulo!==' ' && estudio.lugar!==' ' && 
-          estudio.anio_inicio!==' ' && estudio.anio_fin!==' '){
-            return true;
-      }
-      else{
-          return false;
-      }    
+
+  validar(estudio: Estudios){
+    if(estudio.titulo !=='' && estudio.lugar !=='' && 
+        estudio.anio_inicio !=='' && estudio.anio_fin !==''){
+          return true;
     }
+    else{
+        return false;
+    }    
+  }
+
 
 }

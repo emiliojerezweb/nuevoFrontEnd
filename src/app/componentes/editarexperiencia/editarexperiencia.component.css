@@ -1,0 +1,28 @@
+label{
+    font-size: 20px;
+}
+
+input:hover{
+    background-color: rgb(249, 255, 244);
+}
+textarea:hover{
+    background-color: rgb(249, 255, 244);
+}
+
+small{
+    color: red;
+}
+button{
+    margin:15px 10px;
+}
+
+h2{
+    text-align: center;
+}
+
+.container{
+    padding: 30px;
+    border: 1px solid black;
+    border-radius: 5%;
+    margin-top: 20px;
+}

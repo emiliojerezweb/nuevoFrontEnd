@@ -4,55 +4,54 @@
   <form>
     <div class="form-group">
       <label for="titulo">Titulo.</label>
-      <input type="text" name="titulo" class="form-control" required [(ngModel)]="estudio.titulo"
-        #nombretitulo="ngModel">
-      <div *ngIf="nombretitulo.invalid && (nombretitulo.dirty || nombretitulo.touched)" class="validacion">
-        <div *ngIf="nombretitulo.errors">
-          <small>Falta el titulo</small>
+      <input type="text" name="titulo" class="form-control" required [(ngModel)]="estudio.titulo" 
+      #local="ngModel">
+      <div *ngIf="local.invalid && (local.dirty || local.touched)" class="validacion">
+        <div *ngIf="local.errors?.['required']">
+          <small>Falta el titulo.</small>
         </div>
       </div>
     </div>
     <div class="form-group">
       <label for="lugar">Establecimiento.</label>
-      <input type="text" class="form-control" [(ngModel)]="estudio.lugar" name="lugar" required
-        #local="ngModel">
-      <div *ngIf="local.invalid && (local.dirty || local.touched)" class="validacion">
-        <div *ngIf="local.errors">
+      <input type="text" class="form-control" required [(ngModel)]="estudio.lugar" #lugar="ngModel">
+      <div *ngIf="lugar.invalid && (lugar.dirty || lugar.touched)" class="validacion">
+        <div *ngIf="lugar.errors?.['required']">
           <small>Falta el establecimiento.</small>
         </div>
       </div>
     </div>
     <div class="form-group">
       <label for="inicio">Año inicial.</label>
-      <input type="text" class="form-control" maxlength="4"  [(ngModel)]="estudio.anio_inicio" 
-      name="inicio" required #inicial="ngModel">
+      <input type="text" class="form-control" maxlength="4" name="inicio" required 
+      [(ngModel)]="estudio.anio_inicio" #inicial="ngModel">
       <div *ngIf="inicial.invalid && (inicial.dirty || inicial.touched)" class="validacion">
         <div *ngIf="inicial.value.length < 4">
-            <small>Formato año (YYYY)</small>
-         </div>
-        <div *ngIf="inicial.errors">
-         <small>Falta el año inicial</small>
+          <small>Formato año (YYYY)</small>
         </div>
+      <div *ngIf="inicial.errors?.['required']">
+        <small>Falta el año final</small>
       </div>
+    </div>
     </div>
     <div class="form-group">
         <label for="fin">Año final.</label>
-        <input type="text" class="form-control" maxlength="4"  [(ngModel)]="estudio.anio_fin" 
-        name="fin" required #final="ngModel">
+        <input type="text" class="form-control" maxlength="4" name="fin" required 
+        [(ngModel)]="estudio.anio_fin" #final="ngModel">
         <div *ngIf="final.invalid && (final.dirty || final.touched)" class="validacion">
-            <div *ngIf="final.value.length < 4">
+          <div *ngIf="final.value.length < 4">
               <small>Formato año (YYYY)</small>
-            </div>
-          <div *ngIf="final.errors">
-            <small>Falta el año final</small>
+           </div>
+          <div *ngIf="final.errors?.['required']">
+           <small>Falta el año inicial</small>
           </div>
         </div>
-      </div>
-      <div class="form-group">
+    </div>
+    <div class="form-group">
         <button (click)="guardar(estudio)" class="btn btn-outline-success shadow p-2  mb-3">
           <i class="bi bi-save-fill"></i> Guardar</button>
         <button routerLink="/estudio" class="btn btn-outline-danger shadow p-2 mb-3 ">
           <i class="bi bi-x-circle"></i> Volver</button>
-      </div>
+    </div>
   </form>
 </div>

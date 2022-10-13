@@ -23,8 +23,7 @@ img{
     display: flex;
 }
 button{
-    color: black;
-    background-color: green;
+    margin: 5px;
 }
 
 

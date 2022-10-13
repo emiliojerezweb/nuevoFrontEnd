@@ -1,0 +1,72 @@
+<h2>Modificar experiencia</h2>
+<hr>
+<div class="container col-md-6 shadow">
+  <form>
+    <div class="form-group">
+      <label for="titulo">Empresa.</label>
+      <input type="text" name="empresa" class="form-control" required [(ngModel)]="expe.empresa"
+        #nombre="ngModel">
+      <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" class="validacion">
+        <div *ngIf="nombre.errors">
+          <small>Falta la empresa </small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lugar">Puesto.</label>
+      <input type="text" class="form-control" [(ngModel)]="expe.puesto" name="puesto" required
+        #puesto="ngModel">
+      <div *ngIf="puesto.invalid && (puesto.dirty || puesto.touched)" class="validacion">
+        <div *ngIf="puesto.errors">
+          <small>Falta el puesto.</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inicio">Fecha de ingreso.</label>
+      <input type="text" class="form-control" maxlength="4"  [(ngModel)]="expe.fec_inicio" 
+      name="inicio" required #inicial="ngModel">
+      <div *ngIf="inicial.invalid && (inicial.dirty || inicial.touched)" class="validacion">
+        <div *ngIf="inicial.value.length < 4">
+            <small>Formato año (YYYY)</small>
+         </div>
+        <div *ngIf="inicial.errors">
+         <small>Falta la fecha de inicio.</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="fin">Fecha de egreso.</label>
+        <input type="text" class="form-control" maxlength="4"  [(ngModel)]="expe.fec_fin" 
+        name="fin" required #final="ngModel">
+        <div *ngIf="final.invalid && (final.dirty || final.touched)" class="validacion">
+            <div *ngIf="final.value.length < 4">
+              <small>Formato año (YYYY)</small>
+            </div>
+          <div *ngIf="final.errors">
+            <small>Falta la fecha final.</small>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="descripcion">Descripcion.</label>
+        <textarea row=3 class="form-control" minlength="6" [(ngModel)]="expe.descripcion" name="descripcion" required
+          #descrip="ngModel"></textarea>
+        <div *ngIf="descrip.invalid && (descrip.dirty || descrip.touched)" class="validacion">
+          <div *ngIf="descrip.value.length < 6">
+            <small>Descripcion debe ser mayor a seis caracteres.</small>
+          </div>
+          <div *ngIf="descrip.errors">
+            <small>Falta la descripcion</small>
+          </div>
+        </div>
+      </div>  
+      <div class="form-group">
+        <button (click)="guardar(expe)" class="btn btn-outline-success shadow p-2  mb-3">
+          <i class="bi bi-save-fill"></i> Guardar</button>
+        <button routerLink="/experiencia" class="btn btn-outline-danger shadow p-2 mb-3 ">
+          <i class="bi bi-x-circle"></i> Volver</button>
+      </div>
+  </form>
+</div>
+
