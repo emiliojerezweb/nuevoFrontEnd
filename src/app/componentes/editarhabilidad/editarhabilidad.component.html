@@ -1,0 +1,35 @@
+<h2>Modificar skill</h2>
+<hr>
+<div class="container col-md-6 shadow">
+  <form>
+    <div class="form-group">
+      <label for="habilidad">Nombre.</label>
+      <input type="text" name="habilidad" id="habilidad" class="form-control" required 
+         [(ngModel)]="habilidad.habilidad"
+        #habil="ngModel">
+      <div *ngIf="habil.invalid && (habil.dirty || habil.touched)" class="validacion">
+        <div *ngIf="habil.errors?.['required']">
+          <small>Falta el nombre</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="porcentaje">Porcentaje.</label>
+      <input type="text" class="form-control" id="porcentaje" [(ngModel)]="habilidad.porcentaje" 
+      name="porcentaje" required
+        #porce="ngModel">
+      <div *ngIf="porce.invalid && (porce.dirty || porce.touched)" class="validacion">
+        <div *ngIf="porce.errors?.['required']">
+          <small>Falta el porcentaje.</small>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+        <button (click)="guardar(habilidad)" class="btn btn-outline-success shadow p-2  mb-3">
+          <i class="bi bi-save-fill"></i> Guardar</button>
+        <button routerLink="/habilidad" class="btn btn-outline-danger shadow p-2 mb-3 ">
+          <i class="bi bi-x-circle"></i> Volver</button>
+    </div>
+  </form>
+</div>
+

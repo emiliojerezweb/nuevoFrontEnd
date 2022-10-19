@@ -21,6 +21,9 @@ import { EditarexperienciaComponent } from './componentes/editarexperiencia/edit
 import { CrearexperienciaComponent } from './componentes/crearexperiencia/crearexperiencia.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { EditarhabilidadComponent } from './componentes/editarhabilidad/editarhabilidad.component';
+import { CrearhabilidadComponent } from './componentes/crearhabilidad/crearhabilidad.component';
+import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +37,10 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     EditarestudioComponent,
     CrearestudioComponent,
     EditarexperienciaComponent,
-    CrearexperienciaComponent
+    CrearexperienciaComponent,
+    EditarhabilidadComponent,
+    CrearhabilidadComponent,
+    ProyectosComponent
   ],
 
   imports: [

@@ -11,11 +11,19 @@ import Swal from 'sweetalert2';
 })
 export class CrearestudioComponent implements OnInit {
 
-  estudio: Estudios = new Estudios();
+  estudio: Estudios =new Estudios();
   
   constructor(private estudioServicio: EstudiosService, private router: Router) { }
 
   ngOnInit(): void {
+    this.iniciarEstudio();
+  }
+
+  iniciarEstudio(){
+    this.estudio.titulo='';
+    this.estudio.lugar='';
+    this.estudio.anio_inicio='';
+    this.estudio.anio_fin='';
   }
 
   guardar(estudio:Estudios){
@@ -23,7 +31,7 @@ export class CrearestudioComponent implements OnInit {
     if(this.validar(estudio)){
       if(estudio.anio_inicio.length == 4){
         if(estudio.anio_fin.length == 4){
-            this.estudio.imagen = "Logotrabajo.png"
+          this.estudio.imagen = "logonewestudio.png";
             this.estudioServicio.crearEstudio(estudio).subscribe(
             data => {
                 this.estudio =data;
@@ -55,8 +63,8 @@ export class CrearestudioComponent implements OnInit {
   }
 
   validar(estudio: Estudios){
-    if(estudio.titulo !=='' && estudio.lugar !=='' && 
-        estudio.anio_inicio !=='' && estudio.anio_fin !==''){
+    if(estudio.titulo!=='' && estudio.lugar!=='' && 
+        estudio.anio_inicio!=='' && estudio.anio_fin!==''){
           return true;
     }
     else{

@@ -3,19 +3,24 @@
       <h1>Skills.</h1>
   </div>
   <div class="retorno">
-    <a href="crearexperiencia" class="btn btn-outline-primary shadow p-2 mb-4"><i class="bi bi-card-text"> Agregar experiencia</i></a>
+    <a href="crearhabilidad" class="btn btn-outline-primary shadow p-2 mb-4"><i class="bi bi-card-text"> Agregar skill</i></a>
     <p class="shadow p-2 mb-4 bg-body rounded"><a href="portfolio"><img src="../../../assets/logo_small.png" class="img-fluid" alt="logo"></a></p>
   </div>
   <div class="cuadro ">
       <div class="habilidad col-md-4" *ngFor="let habilidad of habilidades"> 
         <div class="card shadow p-2 mb-4" style="width: 18rem;">
           <div class="card-header">
-            <mat-progress-spinner value="{{habilidad.porcentaje}}" class="progress" diameter="220"></mat-progress-spinner>
+            <mat-progress-spinner value="{{habilidad.porcentaje}}" 
+              class="progress" diameter="220"></mat-progress-spinner>
           </div>
           <ul class="list-group list-group-flush">
             <li class="list-group-item">{{habilidad.habilidad}}</li>
             <li class="list-group-item">{{habilidad.porcentaje}} %</li>
           </ul>
+          <button (click)="editarHabilidad(habilidad)" class=" btn btn-outline-success shadow p-2 mb-3">
+            <i class="bi bi-pencil"> Editar</i></button>
+            <button (click)="borrarHabilidad(habilidad)" class=" btn btn-outline-danger shadow p-2 mb-3">
+              <i class="bi bi-trash"> Borrar</i></button>
         </div>
       </div>
   </div>
