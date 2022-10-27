@@ -24,6 +24,15 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { EditarhabilidadComponent } from './componentes/editarhabilidad/editarhabilidad.component';
 import { CrearhabilidadComponent } from './componentes/crearhabilidad/crearhabilidad.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
+import { LoginComponent } from './auth/login/login.component';
+import { NuevousuarioComponent } from './auth/nuevousuario/nuevousuario.component';
+import { MenuComponent } from './menu/menu.component';
+import { IndexComponent } from './index/index.component';
+import { EstudiosService } from './servicios/estudios.service';
+import { HabilidadService } from './servicios/habilidad.service';
+import { ExperienciaService } from './servicios/experiencia.service';
+import { TokenService } from './servicios/token.service';
+import { AuthService } from './servicios/auth.service';
 
 @NgModule({
   declarations: [
@@ -40,7 +49,11 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
     CrearexperienciaComponent,
     EditarhabilidadComponent,
     CrearhabilidadComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    LoginComponent,
+    NuevousuarioComponent,
+    MenuComponent,
+    IndexComponent
   ],
 
   imports: [
@@ -53,7 +66,12 @@ import { ProyectosComponent } from './componentes/proyectos/proyectos.component'
 
   ],
 
-  providers: [PersonaService],
+  providers: [PersonaService, 
+              EstudiosService,
+              HabilidadService,
+              ExperienciaService,
+              TokenService,
+              AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './auth/login/login.component';
+import { NuevousuarioComponent } from './auth/nuevousuario/nuevousuario.component';
 import { CrearestudioComponent } from './componentes/crearestudio/crearestudio.component';
 import { CrearexperienciaComponent } from './componentes/crearexperiencia/crearexperiencia.component';
 import { CrearhabilidadComponent } from './componentes/crearhabilidad/crearhabilidad.component';
@@ -13,9 +15,12 @@ import { HabilidadesComponent } from './componentes/habilidades/habilidades.comp
 import { HeaderComponent } from './componentes/header/header.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { SobremiComponent } from './componentes/sobremi/sobremi.component';
+import { IndexComponent } from './index/index.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/portfolio', pathMatch: 'full'},
+  {path: '', component: IndexComponent},
+  {path:'login', component: LoginComponent},
+  {path:'nuevousuario', component: NuevousuarioComponent},
   {path:'portfolio', component:HeaderComponent},
   {path:'sobremi', component:SobremiComponent},
   {path:'estudio', component:EstudiosComponent},
@@ -29,6 +34,7 @@ const routes: Routes = [
   {path: 'crearexperiencia', component:CrearexperienciaComponent},
   {path: 'crearhabilidad', component: CrearhabilidadComponent},
   {path: 'editarhabilidad', component: EditarhabilidadComponent}
+  
 ];
  
 
